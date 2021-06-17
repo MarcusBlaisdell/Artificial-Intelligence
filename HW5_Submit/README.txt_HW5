@@ -1,0 +1,26 @@
+Marcus Blaisdell
+Homework #5
+
+	*** Save file information ***
+
+The Agent file first looks for a "saved.txt" file on startup.
+If the file exists, it reads the information in and stores it in the local variables. 
+The first line is the count. 
+This is used to track the number of times it has run for a single file. 
+It resets itself after every tenth run so there is no need to delete the save file for each new world.
+The user can delete the saved.txt file if they desire and the program will regard the next run as the first pass. 
+
+	*** acquired knowledge ***
+
+The agent tracks known pit locations, known wumpus location, and known gold location. If the wumpus and gold locations have not yet been determined, they are set to (0,0) which indicates they are unknown. If no pit has yet been recorded, the pit list will be empty. 
+
+	*** movement ***
+
+At each location, the agent evaluates all possible moves from that location and compares them to the knowledge base. If a move is not valid, it is not evaluated. If a potential move has a known hazard of a wumpus or a pit, it is not added to the list of potential moves. 
+
+After the list of possible moves is generated, a position is selected to move to and evaluate. Unexplored locations are given priority but if there are no unexplored locations in the possible move list, it will move to the last added visited location to evaluate the moves at that location. 
+
+
+	*** Testing ***
+
+This agent was tested with ten maps, all of size 4 as was stated in the assignment instructions. 
